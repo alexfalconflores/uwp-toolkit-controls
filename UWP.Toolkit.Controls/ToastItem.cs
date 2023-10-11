@@ -55,6 +55,7 @@ public sealed class ToastItem : IToastItem
                 .IsIconVisible(parameters.IsIconVisible)
                 .IsClosable(parameters.IsClosable)
                 .Severity(parameters.Severity)
+                .IconSource(parameters.IconSource)
                 .MaxWidth(parameters.MaxWidth);
         infoBar.CloseButtonClick += (sender, args) =>
         {

@@ -2,8 +2,14 @@
 Represents a `Toast` that can be shown. This class is a `singleton` class.
 
 > use:
+> ```csharp
+> using UWP.Toolkit.Controls;
 >
->
+> Toast toast = Toast.Instance;
+> toast.SetTitleBarHeight(TitleBarSize.Tall);
+> toast.SetAlignment(ToastAlignment.TopLeft);
+> toast.Show(toastItemParameters);
+> ```
 
 ## Properties
 ### Instance

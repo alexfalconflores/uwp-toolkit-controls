@@ -278,6 +278,18 @@ public static class ContentOverlayPopupMarkup
     }
 
     /// <summary>
+    /// Sets a value that indicates whether the <see cref="ContentOverlayPopup"/> is open.
+    /// </summary>
+    /// <param name="element"></param>
+    /// <param name="isOpen"></param>
+    /// <returns>The modified <see cref="ContentOverlayPopup"/> with the specified IsOpen.</returns>
+    public static ContentOverlayPopup IsOpen(this ContentOverlayPopup element, bool isOpen)
+    {
+        element.IsOpen = isOpen;
+        return element;
+    }
+
+    /// <summary>
     /// Sets a value that indicates whether the <see cref="ContentOverlayPopup"/> can be dismissed
     /// by clicking in the light-dismiss region or by pressing the ESC key.
     /// </summary>

@@ -14,7 +14,7 @@ using UWP_Toolkit.Extensions;
 namespace UWP.Toolkit.Controls;
 
 /// <summary>
-/// Represents a Toast that can be shown.
+/// Represents a Toast that can be shown. This class is a singleton class.
 /// </summary>
 public sealed class Toast : IToast
 {
@@ -78,6 +78,7 @@ public sealed class Toast : IToast
 
     /// <summary>
     /// Sets the alignment of the ToastContainer. This method can be called only once.
+    /// The default value is ToastAlignment.BottomRight.
     /// </summary>
     /// <param name="toastAlignment"></param>
     public void SetAlignment(ToastAlignment toastAlignment)
@@ -91,6 +92,7 @@ public sealed class Toast : IToast
 
     /// <summary>
     /// Sets the padding of the ToastContainer. This method can be called only once.
+    /// The default value is 10.
     /// </summary>
     /// <param name="padding"></param>
     public void SetPadding(Thickness padding)
@@ -104,6 +106,7 @@ public sealed class Toast : IToast
 
     /// <summary>
     /// Sets the padding of the ToastContainer. This method can be called only once.
+    /// The default value is 10.
     /// </summary>
     /// <param name="padding"></param>
     public void SetPadding(double padding)
@@ -117,6 +120,7 @@ public sealed class Toast : IToast
 
     /// <summary>
     /// Sets the padding of the ToastContainer. This method can be called only once.
+    /// The default value is 10.
     /// </summary>
     /// <param name="left"></param>
     /// <param name="top"></param>
@@ -133,6 +137,7 @@ public sealed class Toast : IToast
 
     /// <summary>
     /// Sets the TitleBar height, so that the ToastContainer does not overlap with the TitleBar. This method can be called only once.
+    /// The default value is TitleBarSize.Short.
     /// </summary>
     /// <param name="titleBarSize"></param>
     public void SetTitleBarHeight(TitleBarSize titleBarSize)

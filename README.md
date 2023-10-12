@@ -1,4 +1,4 @@
-![UWP Markup Cover](<assets/UWP Markup - cover - my library.jpg>)
+![UWP Toolkit Control Cover](<assets/UWP Toolkit Controls - cover - my library.jpg>)
 
 > This project uses `C# 11` with the [`PolySharp`](https://github.com/Sergio0694/PolySharp/tree/main) library. The minimum version is Windows 10, `1903` (Build,18362).
 
@@ -6,186 +6,39 @@
 
 <br/>
 
-[![NuGet](https://img.shields.io/nuget/dt/AlexFalconFlores.UWP.Markup.svg)](https://www.nuget.org/stats/packages/AlexFalconFlores.UWP.Markup?groupby=Version)
-[![NuGet](https://img.shields.io/nuget/vpre/AlexFalconFlores.UWP.Markup.svg)](https://www.nuget.org/packages/AlexFalconFlores.UWP.Markup/)
-<a href="https://www.nuget.org/packages/AlexFalconFlores.UWP.Markup/">
-<img src="https://raw.githubusercontent.com/alexfalconflores/alexfalconflores/main/img/nuget-banner.svg" height=20 alt="Go to Nuget"/>
+[![NuGet](https://img.shields.io/nuget/dt/AlexFalconFlores.UWP.Toolkit.Controls.svg)](https://www.nuget.org/stats/packages/AlexFalconFlores.UWP.Toolkit.Controls?groupby=Version) 
+[![NuGet](https://img.shields.io/nuget/vpre/AlexFalconFlores.UWP.Toolkit.Controls.svg)](https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls/)
+<a href="https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls">
+    <img src="https://raw.githubusercontent.com/alexfalconflores/alexfalconflores/main/img/nuget-banner.svg" height=20 alt="Go to Nuget"/>
 </a>
 
-Applies the `Fluent design pattern` to `WinUI controls` to create interfaces in a more `expressive` and `readable` way.
-
-Uses method `chaining` in the control class for cleaner, more readable code.
+Add custom `controls` to your `Universal Windows Platform (UWP)` applications with `ease`. Accelerate development and improve user experience. Compatible with `WinUI 2.7+`.
 
 ## Installation 📦
-
-This project is available as a [NuGet package](https://www.nuget.org/packages/AlexFalconFlores.UWP.Markup/). You can install it using the NuGet Package Console window:
-
+This project is available as a [NuGet package](https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls). You can install it using the NuGet Package Console window:
 ```bash
-NuGet\Install-Package AlexFalconFlores.UWP.Markup -Version 1.0.0
+NuGet\Install-Package AlexFalconFlores.UWP.Toolkit.Controls -Version 0.0.1
 ```
 
 ## Documentation 📖
+#### Controls
+- [**TitleBar**](docs/TitleBar/TitleBar.md)
+- [**Script**](docs/Script/Script.md)
+- [**ContentOverlayPopup**](docs/ContentOverlayPopup/ContentOverlayPopup.md)
+- [**Toast**](docs/Toast/Toast.md)
 
-> I highlight the `custom methods` that are not `WinUI's own`, so that the `developer` can keep in mind that only WinUI's own methods will not be found. To know how to use them, I checked the `documentation`.
+#### Enum
+- [TitleBarSize](docs/Enum/TitleBarSize.md)
+- [ToastAlignment](docs/Enum/ToastAlignment.md)
 
--   📁 Helper
-    -   [GridHelper](doc/Helper/GridHelper.md)
-        -   [StringToGridLength](doc/Helper/GridHelper.md#StringToGridLength)
--   📁 IconElement
-    -   [BitmapIconMarkup](doc/IconElement/BitmapIconMarkup.md)
-        -   [UriSource(string uriSource)](doc/IconElement/BitmapIconMarkup.md#urisourcestring-urisource)
-    -   [FontIconMarkup](doc/IconElement/FontIconMarkup.md)
-    -   [IconElementMarkup](doc/IconElement/IconElementMarkup.md)
-        -   [Foreground(Color color)](doc/IconElement/IconElementMarkup.md#foregroundcolor-color)
-    -   [PathIconMarkup](doc/IconElement/PathIconMarkup.md)
-    -   [SymbolIconMarkup](doc/IconElement/SymbolIconMarkup.md)
--   📁 Transition
-    -   [ContentThemeTransitionMarkup](doc/Transition/ContentThemeTransitionMarkup.md)
-        -   [Offset (double horizontalOffset, double verticalOffset)](doc/Transition/ContentThemeTransitionMarkup.md#offset-double-horizontaloffset-double-verticaloffset)
-    -   [EdgeUIThemeTransitionMarkup](doc/Transition/EdgeUIThemeTransitionMarkup.md)
-    -   [EntranceThemeTransitionMarkup](doc/Transition/EntranceThemeTransitionMarkup.md)
-        -   [FromOffset (double fromVerticalOffset, double fromHorizontalOffset)](doc/Transition/EntranceThemeTransitionMarkup.md#fromoffset-double-fromverticaloffset-double-fromhorizontaloffset)
-    -   [NavigationThemeTransitionMarkup](doc/Transition/NavigationThemeTransitionMarkup.md)
-    -   [PaneThemeTransitionMarkup](doc/Transition/PaneThemeTransitionMarkup.md)
-    -   [PopupThemeTransitionMarkup](doc/Transition/PopupThemeTransitionMarkup.md)
-        -   [FromOffset (double fromHorizontalOffset, double fromVerticalOffset)](doc/Transition/PopupThemeTransitionMarkup.md#fromoffset-double-fromhorizontaloffset-double-fromverticaloffset)
-    -   [RepositionThemeTransitionMarkup](doc/Transition/RepositionThemeTransitionMarkup.md)
-    -   [TransitionCollectionMarkup](doc/Transition/TransitionCollectionMarkup.md)
-        -   [AddTransition (Transition item)](doc/Transition/TransitionCollectionMarkup.md#addtransition-windowsuixamlmediaanimationtransition-item)
--   📁 VirtualizingPanel
-    -   [CarouselPanelMarkup](doc/VirtualizingPanel/CarouselPanelMarkup.md)
-    -   [OrientedVirtualizingPanelMarkup](doc/VirtualizingPanel/OrientedVirtualizingPanelMarkup.md)
-    -   [VirtualizingStackPanelMarkup](doc/VirtualizingPanel/VirtualizingStackPanelMarkup.md)
-    -   [WrapGridMarkup](doc/VirtualizingPanel/WrapGridMarkup.md)
--   [BorderMarkup](doc/BorderMarkup.md)
-    -   [Padding (double padding)](doc/BorderMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top , double right , double bottom)](doc/BorderMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/BorderMarkup.md#padding-double-horizontal-double-vertical)
-    -   [CornerRadius (double cornerRadius)](doc/BorderMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight , double bottomRightLeft)](doc/BorderMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft, double topRight , double bottomRight , double bottomLeft)](doc/BorderMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
-    -   [BorderThickness (double thickness)](doc/BorderMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight , double topBottom)](doc/BorderMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left , double top, double right , double bottom)](doc/BorderMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/BorderMarkup.md#borderbrush-color-colors)
-    -   [Background (Color colors)](doc/BorderMarkup.md#background-color-colors)
--   [CaptureElementMarkup](doc/CaptureElementMarkup.md)
--   [ColumnDefinitionMarkup](doc/ColumnDefinitionMarkup.md)
--   [ContentControlMarkup](doc/ContentControlMarkup.md)
--   [ContentDialogMarkup](doc/ContentDialogMarkup.md)
--   [ContentPresenterMarkup](doc/ContentPresenterMarkup.md)
-    -   [Foreground (Color color)](doc/ContentPresenterMarkup.md#foreground-color-color)
-    -   [ContentAlignment (HorizontalAlignment horizontalAlignment , VerticalAlignment verticalAlignment)](doc/ContentPresenterMarkup.md#contentalignment-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment)
-    -   [Padding (double padding)](doc/ContentPresenterMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top , double right , double bottom)](doc/ContentPresenterMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/ContentPresenterMarkup.md#padding-double-horizontal-double-vertical)
-    -   [CornerRadius (double cornerRadius)](doc/ContentPresenterMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight, double bottomRightLeft)](doc/ContentPresenterMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft , double topRight , double bottomRight , double bottomLeft)](doc/ContentPresenterMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
-    -   [BorderThickness (double thickness)](doc/ContentPresenterMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight , double topBottom)](doc/ContentPresenterMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left , double top , double right , double bottom)](doc/ContentPresenterMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/ContentPresenterMarkup.md#borderbrush-color-colors)
-    -   [Background (Color colors)](doc/ContentPresenterMarkup.md#background-color-colors)
--   [ControlMarkup](doc/ControlMarkup.md)
-    -   [Padding (double padding)](doc/ControlMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top , double right , double bottom)](doc/ControlMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/ControlMarkup.md#padding-double-horizontal-double-vertical)
-    -   [ContentAlignment (HorizontalAlignment horizontalAlignment , VerticalAlignment verticalAlignment)](doc/ControlMarkup.md#contentalignment-horizontalalignment-horizontalalignment-verticalalignment-verticalalignment)
-    -   [Foreground (Color color)](doc/ControlMarkup.md#foreground-color-color)
-    -   [BorderThickness (double thickness)](doc/ControlMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight , double topBottom)](doc/ControlMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left , double top , double right , double bottom)](doc/ControlMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/ControlMarkup.md#borderbrush-color-colors)
-    -   [Background (Color colors)](doc/ControlMarkup.md#background-color-colors)
-    -   [DefaultStyleResourceUri (string resourceUri)](doc/ControlMarkup.md#defaultstyleresourceuri-string-resourceuri)
-    -   [CornerRadius (double cornerRadius)](doc/ControlMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight , double bottomRightLeft)](doc/ControlMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft , double topRight , double bottomRight , double bottomLeft)](doc/ControlMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
--   [FlipViewMarkup](doc/FlipViewMarkup.md)
--   [FrameworkElementMarkup](doc/FrameworkElementMarkup.md)
-    -   [Alignment (VerticalAlignment verticalAlignment, HorizontalAlignment horizontalAlignment)](doc/FrameworkElementMarkup.md#alignment-verticalalignment-verticalalignment-horizontalalignment-horizontalalignment)
-    -   [Alignment ((VerticalAlignment vertical, HorizontalAlignment horizontal) alignment)](doc/FrameworkElementMarkup.md#alignment-verticalalignment-vertical-horizontalalignment-horizontal-alignment)
-    -   [Margin (double margin)](doc/FrameworkElementMarkup.md#margin-double-margin)
-    -   [Margin (double left , double top , double right , double bottom)](doc/FrameworkElementMarkup.md#margin-double-left-double-top-double-right-double-bottom)
-    -   [Margin (double horizontal, double vertical)](doc/FrameworkElementMarkup.md#margin-double-horizontal-double-vertical)
-    -   [Row (int row)](doc/FrameworkElementMarkup.md#row-int-row)
-    -   [Column (int column)](doc/FrameworkElementMarkup.md#column-int-column)
-    -   [RowSpan (int rowSpan)](doc/FrameworkElementMarkup.md#rowspan-int-rowspan)
-    -   [ColumnSpan (int columnSpan)](doc/FrameworkElementMarkup.md#columnspan-int-columnspan)
--   [GridMarkup](doc/GridMarkup.md)
-    -   [Padding (double padding)](doc/GridMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top, double right , double bottom)](doc/GridMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/GridMarkup.md#padding-double-horizontal-double-vertical)
-    -   [CornerRadius (double cornerRadius)](doc/GridMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight, double bottomRightLeft)](doc/GridMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft, double topRight, double bottomRight, double bottomLeft)](doc/GridMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
-    -   [BorderThickness (double thickness)](doc/GridMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight, double topBottom)](doc/GridMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left, double top, double right, double bottom)](doc/GridMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/GridMarkup.md#borderbrush-color-colors)
-    -   [Spacing (double spacing)](doc/GridMarkup.md#spacing-double-spacing)
-    -   [Spacing (double rowSpacing, double columnSpacing)](doc/GridMarkup.md#spacing-double-rowspacing-double-columnspacing)
-    -   [RowDefinition (RowDefinition rowDefinition)](doc/GridMarkup.md#rowdefinition-rowdefinition-rowdefinition)
-    -   [ColumnDefinition (ColumnDefinition columnDefinition)](doc/GridMarkup.md#columndefinition-columndefinition-columndefinition)
-    -   [RowDefinitions (params RowDefinition[] rowDefinitions)](doc/GridMarkup.md#rowdefinitions-params-rowdefinition-rowdefinitions)
-    -   [ColumnDefinitions (params ColumnDefinition[] columnDefinitions)](doc/GridMarkup.md#columndefinitions-params-columndefinition-columndefinitions)
-    -   [Rows (params string[] rows)](doc/GridMarkup.md#rows-params-string-rows)
-    -   [Columns (params string[] columns)](doc/GridMarkup.md#columns-params-string-columns)
--   [InfoBarMarkup](doc/InfoBarMarkup.md)
--   [ItemsControlMarkup](doc/ItemsControlMarkup.md)
--   [ItemsWrapGridMarkup](doc/ItemsWrapGridMarkup.md)
-    -   [GroupPadding (double groupPadding)](doc/ItemsWrapGridMarkup.md#grouppadding-double-padding)
-    -   [GroupPadding (double left, double top, double right, double bottom)](doc/ItemsWrapGridMarkup.md#grouppadding-double-left-double-top-double-right-double-bottom)
-    -   [GroupPadding (double horizontal , double vertical)](doc/ItemsWrapGridMarkup.md#grouppadding-double-horizontal-double-vertical)
--   [PageMarkup](doc/PageMarkup.md)
--   [PanelMarkup](doc/PanelMarkup.md)
-    -   [Background (Color colors)](doc/PanelMarkup.md#background-color-color)
-    -   [AddChildren (params UIElement[] items)](doc/PanelMarkup.md#addchildren-params-uielement-items)
-    -   [AddChild (UIElement item)](doc/PanelMarkup.md#addchild-uielement-item)
-    -   [TryAddChildren (params UIElement[] items)](doc/PanelMarkup.md#tryaddchildren-params-uielement-items)
-    -   [TryAddChild (UIElement item)](doc/PanelMarkup.md#tryaddchild-uielement-item)
--   [PopupMarkup](doc/PopupMarkup.md)
-    -   [Offset (double horizontal, double vertical)](doc/PopupMarkup.md#offset-double-horizontal-double-vertical)
--   [RelativePanelMarkup](doc/RelativePanelMarkup.md)
-    -   [Padding (double padding)](doc/RelativePanelMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top, double right , double bottom)](doc/RelativePanelMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/RelativePanelMarkup.md#padding-double-horizontal-double-vertical)
-    -   [CornerRadius (double cornerRadius)](doc/RelativePanelMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight, double bottomRightLeft)](doc/RelativePanelMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft, double topRight, double bottomRight, double bottomLeft)](doc/RelativePanelMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
-    -   [BorderThickness (double thickness)](doc/RelativePanelMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight, double topBottom)](doc/RelativePanelMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left, double top, double right, double bottom)](doc/RelativePanelMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/RelativePanelMarkup.md#borderbrush-color-colors)
--   [RowDefinitionMarkup](doc/RowDefinitionMarkup.md)
--   [ScrollViewerMarkup](doc/ScrollViewerMarkup.md)
--   [SelectorMarkup](doc/SelectorMarkup.md)
--   [StackPanelMarkup](doc/StackPanelMarkup.md)
-    -   [Padding (double padding)](doc/StackPanelMarkup.md#padding-double-padding)
-    -   [Padding (double left , double top, double right , double bottom)](doc/StackPanelMarkup.md#padding-double-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/StackPanelMarkup.md#padding-double-horizontal-double-vertical)
-    -   [CornerRadius (double cornerRadius)](doc/StackPanelMarkup.md#cornerradius-double-cornerradius)
-    -   [CornerRadius (double topLeftRight, double bottomRightLeft)](doc/StackPanelMarkup.md#cornerradius-double-topleftright-double-bottomrightleft)
-    -   [CornerRadius (double topLeft, double topRight, double bottomRight, double bottomLeft)](doc/StackPanelMarkup.md#cornerradius-double-topleft-double-topright-double-bottomright-double-bottomleft)
-    -   [BorderThickness (double thickness)](doc/StackPanelMarkup.md#borderthickness-double-thickness)
-    -   [BorderThickness (double leftRight, double topBottom)](doc/StackPanelMarkup.md#borderthickness-double-leftright-double-topbottom)
-    -   [BorderThickness (double left, double top, double right, double bottom)](doc/StackPanelMarkup.md#borderthickness-double-left-double-top-double-right-double-bottom)
-    -   [BorderBrush (Color colors)](doc/StackPanelMarkup.md#borderbrush-color-colors)
--   [TextBlockMarkup](doc/TextBlockMarkup.md)
-    -   [Padding (double padding)](doc/TextBlockMarkup.md#paddingdouble-padding)
-    -   [Padding (double left , double top, double right , double bottom)](doc/TextBlockMarkup.md#paddingdouble-left-double-top-double-right-double-bottom)
-    -   [Padding (double horizontal , double vertical)](doc/TextBlockMarkup.md#paddingdouble-horizontal-double-vertical)
-    -   [Foreground (Color color)](doc/TextBlockMarkup.md#foregroundcolor-color)
--   [TickBarMarkup](doc/TickBarMarkup.md)
--   [ToolTipMarkup](doc/ToolTipMarkup.md)
-    -   [Offset (double horizontalOffset, double verticalOffset)](doc/ToolTipMarkup.md#offsetdouble-horizontaloffset-double-verticaloffset)
--   [UIElementMarkup](doc/UIElementMarkup.md)
-    -   [ToolTip (object toolTip)](doc/UIElementMarkup.md#tooltipobject-tooltip)
-    -   [ToolTip (object toolTip, PlacementMode placementMode)](doc/UIElementMarkup.md#tooltipobject-tooltip-placementmode-placementmode)
-    -   [ToolTip (object toolTip, PlacementMode placementMode, UIElement placementTarget)](doc/UIElementMarkup.md#tooltipobject-tooltip-placementmode-placementmode-uielement-placementtarget)
-    -   [ToolTip (object toolTip, PlacementMode placementMode, UIElement placementTarget, Rect? placementRect)](doc/UIElementMarkup.md#tooltipobject-tooltip-placementmode-placementmode-uielement-placementtarget-rect-placementrect)
-    -   [ToolTip (object toolTip, PlacementMode placementMode, UIElement placementTarget, Rect? placementRect, double horizontalOffset, double verticalOffset, bool isOpen)](doc/UIElementMarkup.md#tooltipobject-tooltip-placementmode-placementmode-uielement-placementtarget-rect-placementrect-double-horizontaloffset-double-verticaloffset-bool-isopen)
--   [UserControlMarkup](doc/UserControlMarkup.md)
--   [VariableSizedWrapGridMarkup](doc/VariableSizedWrapGridMarkup.md)
--   [ViewboxMarkup](doc/ViewboxMarkup.md)
+#### Helper
+- [TitleBarTheme](docs/Helper/TitleBarTheme.md)
+
+#### Struct
+- [ToastItemParameters](docs/Struct/ToastItemParameters.md)
+
+## Library Dependencies 📚
+- PolySharp >= 1.13.2
+- AlexFalconFlores.UWP.Toolkit >= 0.0.7
+- AlexFalconFlores.UWP.Markup >= 1.0.0
+- Microsoft.UI.Xaml >= 2.7.0

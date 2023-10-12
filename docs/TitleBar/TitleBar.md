@@ -1,7 +1,6 @@
 # TitleBar
+Represents a Title Bar that can be used in a UWP APP. The background of the buttons automatically changes color.
 ![Alt text](on-app.png)
-
-<video src="Recording%202023-10-12%20025429.mp4" controls title="Title"></video>
 
 > use:
 > ```xaml

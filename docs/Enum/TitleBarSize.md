@@ -2,6 +2,11 @@
 ## TitleBarSize
 `Size` of the `TitleBar`.
 
+> use:
+> ```csharp
+> using UWP.Toolkit.Controls.Enum;
+>```
+
 - `TopLeft` // Position the toast at the top left corner of the screen.
 - `TopCenter` // Position the toast at the top center of the screen.
 - `TopRight` // Position the toast at the top right corner of the screen.

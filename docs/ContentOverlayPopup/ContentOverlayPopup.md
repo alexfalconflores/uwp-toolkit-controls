@@ -1,8 +1,18 @@
 # ContentOverlayPopup
 Represents a `full-screen popup` with content overlay functionality, typically used for displaying content that should cover the entire screen while respecting the `TitleBar height`.
 > use:
->
-> 
+> ```csharp
+> using UWP.Toolkit.Controls;
+> ContentOverlayPopup contentOverlayPopup = new ContentOverlayPopup()
+>    .TitleBarHeight(TitleBarSize.Tall)
+>    .TitleContent(titleContent)
+>    .CloseButtonToolTip("Close")
+>    .Background("AccentAcrylicBackgroundFillColorDefaultBrush") // example
+>    .IsCloseButtonVisible(Visibility.Visible)
+>    .IsLightDismissEnabled(false)
+>    .BodyContent(bodyContent);
+> contentOverlayPopup.Show();
+> ```
 
 [Markup](ContentOverlayPopupMarkup.md)
 

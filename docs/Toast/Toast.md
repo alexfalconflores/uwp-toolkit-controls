@@ -1,6 +1,6 @@
 # Toast
 Represents a `Toast` that can be shown. This class is a `singleton` class.
-
+![Alt text](<Screenshot 2023-10-12 025109.png>)
 > use:
 > ```csharp
 > using UWP.Toolkit.Controls;

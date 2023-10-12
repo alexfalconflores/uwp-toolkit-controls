@@ -3,7 +3,9 @@
 
 > use:
 > ```xaml
-> xmlns:utControls="using:UWP_Toolkit.Controls"
+> xmlns:utControls="using:UWP.Toolkit.Controls"
+>
+> <utControls:Script ButtonToolTip="Copy" Text="Alex.Falcon.Flores" />
 > ```
 
 ## Properties

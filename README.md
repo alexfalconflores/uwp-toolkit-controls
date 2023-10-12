@@ -17,7 +17,7 @@ Add custom `controls` to your `Universal Windows Platform (UWP)` applications wi
 ## Installation 📦
 This project is available as a [NuGet package](https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls). You can install it using the NuGet Package Console window:
 ```bash
-NuGet\Install-Package AlexFalconFlores.UWP.Toolkit.Controls -Version 0.0.1
+NuGet\Install-Package AlexFalconFlores.UWP.Toolkit.Controls -Version 0.0.2
 ```
 
 ## Documentation 📖

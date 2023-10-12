@@ -1,5 +1,6 @@
 # ContentOverlayPopup
 Represents a `full-screen popup` with content overlay functionality, typically used for displaying content that should cover the entire screen while respecting the `TitleBar height`.
+![Alt text](ContentOverlayPopup.png)
 > use:
 > ```csharp
 > using UWP.Toolkit.Controls;

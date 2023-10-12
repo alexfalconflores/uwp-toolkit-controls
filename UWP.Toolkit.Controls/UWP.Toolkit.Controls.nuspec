@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>AlexFalconFlores.UWP.Toolkit.Controls</id>
+		<version>0.0.2</version>
+		<title>UWP.Toolkit.Controls</title>
+		<authors>Alex Falcon Flores</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<icon>Assets/icon.png</icon>
+		<readme>Docs/readme.md</readme>
+		<projectUrl>https://github.com/alexfalconflores/uwp-toolkit-controls</projectUrl>
+		<description>Add custom controls to your Universal Windows Platform (UWP) applications with ease. Accelerate development and improve user experience. Compatible with WinUI 2.7+.</description>
+		<releaseNotes>Add ContentOverlayPopup, Toast Controls. ToastAlignment enum, TitleBarTheme helper</releaseNotes>
+		<copyright>Copyright 2023</copyright>
+		<tags>uwp controls markup csharp fluent winui xaml universal windows helper transition enum theme icon</tags>
+		<dependencies>
+			<dependency id="AlexFalconFlores.UWP.Toolkit" version="0.0.7" />
+			<dependency id="AlexFalconFlores.UWP.Markup" version="1.0.0" />
+			<dependency id="Microsoft.UI.Xaml" version="2.7.0" />
+			<dependency id="PolySharp" version="1.13.2" />
+			<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.2.14" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="Assets\icon.png" target="Assets\"/>
+		<file src="bin\Release\UWP.Toolkit.Controls\Assets\*.png" target="lib\netcore50\UWP.Toolkit.Controls\Assets" />
+		<file src="Docs\readme.md" target="Docs\"/>
+
+		<file src="bin\Release\*.dll" target="lib\netcore50" />
+		<file src="bin\Release\*.pdb" target="lib\netcore50" />
+		<file src="bin\Release\*.pri" target="lib\netcore50" />
+		<file src="bin\Release\*.xml" target="lib\netcore50" />
+		<file src="bin\Release\*.winmd" target="lib\netcore50" />
+
+		<file src="bin\Release\UWP.Toolkit.Controls\*.xaml" target="lib\netcore50\UWP.Toolkit.Controls" />
+		<file src="bin\Release\UWP.Toolkit.Controls\*.xbf" target="lib\netcore50\UWP.Toolkit.Controls" />
+		<file src="bin\Release\UWP.Toolkit.Controls\*.xml" target="lib\netcore50\UWP.Toolkit.Controls" />
+
+	</files>
+</package>

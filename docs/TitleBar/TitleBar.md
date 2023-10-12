@@ -3,7 +3,17 @@
 
 > use:
 > ```xaml
-> xmlns:utControls="using:UWP_Toolkit.Controls"
+> xmlns:utControls="using:UWP.Toolkit.Controls"
+>
+> <utControls:TitleBar
+>       AppName="Test UWP"
+>       IsBackButtonVisible="Visible"
+>       IsReleaseTagVisible="Visible"
+>       ReleaseTag="Release"
+>       Size="Tall"
+>     <utControls:TitleBar.Body>
+>         <winui:NavigationView
+>        ....
 > ```
 
 ## Properties

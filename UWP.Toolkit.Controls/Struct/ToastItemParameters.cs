@@ -37,7 +37,7 @@ public struct ToastItemParameters : IToastItemParameters
     /// </summary>
     public double MaxWidth { get; set; } = ToastItem.DEFAULT_MAX_WIDTH;
     /// <summary>
-    /// Set the graphic content to appear alongsied the title and message in the toast item.
+    /// Gets or Set the graphic content to appear alongsied the title and message in the toast item.
     /// </summary>
     public IconSource IconSource { get; set; }
 

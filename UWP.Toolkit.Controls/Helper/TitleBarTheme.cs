@@ -37,8 +37,8 @@ public static class TitleBarTheme
         titleBar.ButtonBackgroundColor = Colors.Transparent;
         titleBar.InactiveBackgroundColor = Colors.Transparent;
         titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-        titleBar.ButtonHoverBackgroundColor = isLightTheme ? TitleBarDark.HoverBackgroundColor : TitleBarDark.HoverBackgroundColor;
-        titleBar.ButtonPressedBackgroundColor = isLightTheme ? TitleBarDark.PressedBackgroundColor : TitleBarDark.PressedBackgroundColor;
+        titleBar.ButtonHoverBackgroundColor = isLightTheme ? TitleBarLight.HoverBackgroundColor : TitleBarDark.HoverBackgroundColor;
+        titleBar.ButtonPressedBackgroundColor = isLightTheme ? TitleBarLight.PressedBackgroundColor : TitleBarDark.PressedBackgroundColor;
     }
 }
 

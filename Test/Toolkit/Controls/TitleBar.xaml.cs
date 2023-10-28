@@ -9,6 +9,9 @@ using Windows.UI.Core;
 
 using UWP.Toolkit.Controls.Helper;
 using UWP.Toolkit.Controls.Enum;
+using System.Diagnostics;
+
+//using Microsoft.UI.Xaml.Controls;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -301,94 +304,94 @@ public sealed partial class TitleBar : UserControl
     //new PropertyMetadata(null, OnIsBackButtonEnabledPropertyChanged)
     #endregion Back Button
 
-    #region Navigation Button
+    #region Pane Toggle Button
     /// <summary>
-    /// Gets or sets the command to invoke when this navigation button is pressed.
+    /// Gets or sets the command to invoke when this pane toggle button is pressed.
     /// </summary>
     /// <returns>
-    /// The command to invoke when this back navigation is pressed. The default is null.
+    /// The command to invoke when this pane toggle button is pressed. The default is null.
     /// </returns>
-    public ICommand NavigationButtonCommand
+    public ICommand PaneToggleButtonCommand
     {
-        get { return (ICommand)GetValue(NavigationButtonCommandProperty); }
-        set { SetValue(NavigationButtonCommandProperty, value); }
+        get { return (ICommand)GetValue(PaneToggleButtonCommandProperty); }
+        set { SetValue(PaneToggleButtonCommandProperty, value); }
     }
 
     /// <summary>
-    /// Identifies the <see cref="NavigationButtonCommand"/> dependency property.
+    /// Identifies the <see cref="PaneToggleButtonCommand"/> dependency property.
     /// </summary>
-    public static readonly DependencyProperty NavigationButtonCommandProperty = DependencyProperty.Register(
-        nameof(NavigationButtonCommand),
+    public static readonly DependencyProperty PaneToggleButtonCommandProperty = DependencyProperty.Register(
+        nameof(PaneToggleButtonCommand),
         typeof(ICommand),
         typeof(TitleBar),
         new PropertyMetadata(null));
-    //new PropertyMetadata(null, OnIsNavigationButtonVisiblePropertyChanged)
+    //new PropertyMetadata(null, OnIsPaneToggleButtonVisiblePropertyChanged)
 
     /// <summary>
-    /// Gets or sets the parameter to pass to the <see cref="NavigationkButtonCommand"/> property.
+    /// Gets or sets the parameter to pass to the <see cref="PaneToggleButtonCommand"/> property.
     /// </summary>
     /// <returns>
-    /// The parameter to pass to the <see cref="NavigationButtonCommand"/> property. The default is null.
+    /// The parameter to pass to the <see cref="PaneToggleButtonCommand"/> property. The default is null.
     /// </returns>
-    public object NavigationButtonCommandParameter
+    public object PaneToggleButtonCommandParameter
     {
-        get { return (object)GetValue(NavigationButtonCommandParameterProperty); }
-        set { SetValue(NavigationButtonCommandParameterProperty, value); }
+        get { return (object)GetValue(PaneToggleButtonCommandParameterProperty); }
+        set { SetValue(PaneToggleButtonCommandParameterProperty, value); }
     }
 
     /// <summary>
-    /// Identifies the <see cref="NavigationButtonCommandParameter"/> dependency property.
+    /// Identifies the <see cref="PaneToggleButtonCommandParameter"/> dependency property.
     /// </summary>
-    public static readonly DependencyProperty NavigationButtonCommandParameterProperty = DependencyProperty.Register(
-        nameof(NavigationButtonCommandParameter),
+    public static readonly DependencyProperty PaneToggleButtonCommandParameterProperty = DependencyProperty.Register(
+        nameof(PaneToggleButtonCommandParameter),
         typeof(object),
         typeof(TitleBar),
         new PropertyMetadata(null));
-    //new PropertyMetadata(null, OnIsNavigationButtonVisiblePropertyChanged)
+    //new PropertyMetadata(null, OnIsPaneToggleButtonVisiblePropertyChanged)
 
     /// <summary>
-    /// Gets or sets the visibility of the navigation button.
+    /// Gets or sets the visibility of the pane toggle button.
     /// </summary>
     /// <returns>
     /// A value of the enumeration. The default is **Collapsed**.
     /// </returns>
-    public Visibility IsNavigationButtonVisible
+    public Visibility IsPaneToggleButtonVisible
     {
-        get { return (Visibility)GetValue(IsNavigationButtonVisibleProperty); }
-        set { SetValue(IsNavigationButtonVisibleProperty, value); }
+        get { return (Visibility)GetValue(IsPaneToggleButtonVisibleProperty); }
+        set { SetValue(IsPaneToggleButtonVisibleProperty, value); }
     }
 
     /// <summary>
     /// Identifies the <see cref="IsNavigationButtonVisible"/> dependency property.
     /// </summary>
-    public static readonly DependencyProperty IsNavigationButtonVisibleProperty = DependencyProperty.Register(
-        nameof(IsNavigationButtonVisible),
+    public static readonly DependencyProperty IsPaneToggleButtonVisibleProperty = DependencyProperty.Register(
+        nameof(IsPaneToggleButtonVisible),
         typeof(Visibility),
         typeof(TitleBar),
         new PropertyMetadata(Visibility.Collapsed));
-    //new PropertyMetadata(null, OnIsNavigationButtonVisiblePropertyChanged)
+    //new PropertyMetadata(null, OnIsPaneToggleButtonVisiblePropertyChanged)
 
     /// <summary>
-    /// Gets or sets a value indicating whether the user can interact with the navigation button.
+    /// Gets or sets a value indicating whether the user can interact with the pane toggle button.
     /// </summary>
     /// <returns>
-    /// **true** if the user can interact with the navigation button otherwise **false**. The default is **true**.
+    /// **true** if the user can interact with the pane toggle button otherwise **false**. The default is **true**.
     /// </returns>
-    public bool IsNavigationButtonEnabled
+    public bool IsPaneToggleButtonEnabled
     {
-        get { return (bool)GetValue(IsNavigationButtonEnabledProperty); }
-        set { SetValue(IsNavigationButtonEnabledProperty, value); }
+        get { return (bool)GetValue(IsPaneToggleButtonEnabledProperty); }
+        set { SetValue(IsPaneToggleButtonEnabledProperty, value); }
     }
 
     /// <summary>
     /// Identifies the <see cref="IsNavigationButtonEnabled"/> dependency property.
     /// </summary>
-    public static readonly DependencyProperty IsNavigationButtonEnabledProperty = DependencyProperty.Register(
-        nameof(IsNavigationButtonEnabled),
+    public static readonly DependencyProperty IsPaneToggleButtonEnabledProperty = DependencyProperty.Register(
+        nameof(IsPaneToggleButtonEnabled),
         typeof(bool),
         typeof(TitleBar),
         new PropertyMetadata(true));
-    //new PropertyMetadata(null, OnIsNavigationButtonEnabledPropertyChanged)
+    //new PropertyMetadata(null, OnIsPaneToggleButtonEnabledPropertyChanged)
     #endregion Navigation Button
 
     #region Search Control
@@ -483,8 +486,42 @@ public sealed partial class TitleBar : UserControl
         nameof(Body),
         typeof(UIElement),
         typeof(TitleBar),
-        new PropertyMetadata(null));
-    //new PropertyMetadata(null, OnBodyPropertyChanged)
+    new PropertyMetadata(null, OnBodyPropertyChanged));
+    //new PropertyMetadata(null));
+
+    private static void OnBodyPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        if (d is TitleBar titleBar)
+        {
+            if (e.NewValue is Microsoft.UI.Xaml.Controls.NavigationView navigationView)
+            {
+                titleBar.PaneToggleButton.Click += (s, a) =>
+                {
+                    navigationView.IsPaneOpen = !navigationView.IsPaneOpen;
+                };
+
+                if (navigationView.PaneDisplayMode == Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto)
+                {
+                    navigationView.DisplayModeChanged += (s, a) =>
+                    {
+                        var newMode = a.DisplayMode;
+                        if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded)
+                        {
+                            titleBar.IsPaneToggleButtonVisible = Visibility.Collapsed;
+                        }
+                        else if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact || newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal)
+                        {
+                            titleBar.IsPaneToggleButtonVisible = Windows.UI.Xaml.Visibility.Visible;
+                        }
+                    };
+                }
+            }
+            //else
+            //{
+            //    titleBar.Body = (UIElement)e.NewValue;
+            //}
+        }
+    }
     #endregion
 
     #region Constructor

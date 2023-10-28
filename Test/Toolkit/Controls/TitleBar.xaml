@@ -43,11 +43,11 @@
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
                 <Rectangle x:Name="back_button_spacing" Width="32" Fill="Transparent" Visibility="{x:Bind IsBackButtonVisible, Mode=OneWay}" />
-                <Rectangle x:Name="navigation_button_spacing"
+                <Rectangle x:Name="pane_toggle_button_spacing"
                            Grid.Column="1"
                            Width="32"
                            Fill="Transparent"
-                           Visibility="{x:Bind IsNavigationButtonVisible, Mode=OneWay}"
+                           Visibility="{x:Bind IsPaneToggleButtonVisible, Mode=OneWay}"
                            />
                 <Image x:Name="App_Icon"
                        Grid.Column="2"
@@ -140,18 +140,18 @@
                             </winui:AnimatedIcon.FallbackIconSource>
                         </winui:AnimatedIcon>
                     </Button>
-                    <Button x:Name="NavigationButton"
-                            x:Uid="Navigation_Button"
+                    <Button x:Name="PaneToggleButton"
+                            x:Uid="Pane_toggle_Button"
                             Width="32"
                             Margin="0,0,2,0"
                             Padding="6"
                             VerticalAlignment="Center"
                             Background="Transparent"
                             BorderBrush="Transparent"
-                            Command="{x:Bind NavigationButtonCommand}"
-                            CommandParameter="{x:Bind NavigationButtonCommandParameter}"
-                            IsEnabled="{x:Bind IsNavigationButtonEnabled, Mode=OneWay}"
-                            Visibility="{x:Bind IsNavigationButtonVisible, Mode=OneWay}"
+                            Command="{x:Bind PaneToggleButtonCommand}"
+                            CommandParameter="{x:Bind PaneToggleButtonCommandParameter}"
+                            IsEnabled="{x:Bind IsPaneToggleButtonEnabled, Mode=OneWay}"
+                            Visibility="{x:Bind IsPaneToggleButtonVisible, Mode=OneWay}"
                             >
                         <Button.Transitions>
                             <TransitionCollection>

@@ -19,7 +19,7 @@ using WinUI = Microsoft.UI.Xaml.Controls;
 
 namespace Test.ViewModels
 {
-    public class ShellViewModel : ObservableObject
+    public partial class ShellViewModel : ObservableObject
     {
         private readonly KeyboardAccelerator _altLeftKeyboardAccelerator = BuildKeyboardAccelerator(VirtualKey.Left, VirtualKeyModifiers.Menu);
         private readonly KeyboardAccelerator _backKeyboardAccelerator = BuildKeyboardAccelerator(VirtualKey.GoBack);
@@ -59,6 +59,12 @@ namespace Test.ViewModels
             NavigationService.NavigationFailed += Frame_NavigationFailed;
             NavigationService.Navigated += Frame_Navigated;
             _navigationView.BackRequested += OnBackRequested;
+        }
+
+        [RelayCommand]
+        public void CanBack()
+        {
+            NavigationService.GoBack();
         }
 
         private async void OnLoaded()

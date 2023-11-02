@@ -10,8 +10,15 @@
       xmlns:utControls="using:UWP.Toolkit.Controls"
       xmlns:views="using:Test.Views"
       xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+      winui:BackdropMaterial.ApplyToRootOrPageBackground="True"
       mc:Ignorable="d"
       >
+
+    <!--<Page.Resources>
+        <ResourceDictionary>
+            <utConverters:PaneDisplayModeToVisibilityConverter x:Key="PaneDisplayModeToVisibilityConverter" />
+        </ResourceDictionary>
+    </Page.Resources>-->
 
     <i:Interaction.Behaviors>
         <ic:EventTriggerBehavior EventName="Loaded">
@@ -19,32 +26,29 @@
         </ic:EventTriggerBehavior>
     </i:Interaction.Behaviors>
 
-    <utControls:TitleBar AppName="Test UWP"
-                         IsBackButtonEnabled="True"
-                         IsBackButtonVisible="Visible"
-                         IsNavigationButtonEnabled="True"
-                         IsNavigationButtonVisible="Visible"
+    <utControls:TitleBar x:Name="MyTitleBar"
+                         AppIconSource="/Assets/AppLogo.svg"
+                         AppName="UWP Toolkit"
+                         BackButtonCommand="{x:Bind ViewModel.CanBackCommand}"
+                         IsBackButtonEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
+                         IsBackButtonVisible="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
                          IsReleaseTagVisible="Visible"
-                         ReleaseTag="Release"
+                         ReleaseTag="Test"
                          Size="Tall"
                          >
         <utControls:TitleBar.PanelLeft>
             <TextBlock Text="PanelLeft" />
         </utControls:TitleBar.PanelLeft>
         <utControls:TitleBar.Search>
-            <AutoSuggestBox QueryIcon="Find" />
+            <AutoSuggestBox MaxWidth="300" QueryIcon="Find" />
         </utControls:TitleBar.Search>
         <utControls:TitleBar.PanelRight>
             <TextBlock Text="PanelRight" />
         </utControls:TitleBar.PanelRight>
         <utControls:TitleBar.Body>
-            <winui:NavigationView x:Name="navigationView"
-                                  Background="{ThemeResource SystemControlBackgroundAltHighBrush}"
-                                  IsBackButtonVisible="Visible"
-                                  IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
-                                  IsSettingsVisible="True"
-                                  SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
-                                  >
+            <winui:NavigationView x:Name="navigationView" IsBackButtonVisible="Collapsed" IsSettingsVisible="True" SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}">
+                <!--    IsBackButtonVisible="Collapsed"    -->
+                <!--    IsPaneToggleButtonVisible="False"    -->
                 <winui:NavigationView.MenuItems>
                     <!--
                         TODO: Change the symbols for each item as appropriate for your app

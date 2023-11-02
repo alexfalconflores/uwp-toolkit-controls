@@ -1,7 +1,7 @@
 ![UWP Toolkit Control Cover](<assets/UWP Toolkit Controls - cover - my library.jpg>)
 
 > This project uses `C# 11` with the [`PolySharp`](https://github.com/Sergio0694/PolySharp/tree/main) library. The minimum version is Windows 10, `1903` (Build,18362).
-
+>
 > This project can be used with C# 7.2, but we recommend that you use C# 11 in your project (.csproj) and use the [`PolySharp`](https://github.com/Sergio0694/PolySharp/tree/main) library.
 
 <br/>
@@ -12,17 +12,17 @@
     <img src="https://raw.githubusercontent.com/alexfalconflores/alexfalconflores/main/img/nuget-banner.svg" height=20 alt="Go to Nuget"/>
 </a>
 
+> [!IMPORTANT]
+> Those who have version `0.0.2` and `upgraded` to version `0.0.3`, please take a look at the documentation, as some `changes` have been made.
+
 Add custom `controls` to your `Universal Windows Platform (UWP)` applications with `ease`. Accelerate development and improve user experience. Compatible with `WinUI 2.7+`.
 
 ## Installation 📦
-This project is available as a [NuGet package](https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls). You can install it using the NuGet Package Console window:
-```bash
-NuGet\Install-Package AlexFalconFlores.UWP.Toolkit.Controls -Version 0.0.2
-```
+This project is available as a [NuGet package](https://www.nuget.org/packages/AlexFalconFlores.UWP.Toolkit.Controls).
 
 ## Documentation 📖
 #### Controls
-- [**TitleBar**](docs/TitleBar/TitleBar.md)
+- [**TitleBar**](docs/TitleBar/TitleBar.md) (*Update a Property, New Properties*)
 - [**Script**](docs/Script/Script.md)
 - [**ContentOverlayPopup**](docs/ContentOverlayPopup/ContentOverlayPopup.md)
 - [**Toast**](docs/Toast/Toast.md)
@@ -30,6 +30,7 @@ NuGet\Install-Package AlexFalconFlores.UWP.Toolkit.Controls -Version 0.0.2
 #### Enum
 - [TitleBarSize](docs/Enum/TitleBarSize.md)
 - [ToastAlignment](docs/Enum/ToastAlignment.md)
+- [ElementDisplayMode](docs/Enum/ElementDisplayMode.md) (New)
 
 #### Helper
 - [TitleBarTheme](docs/Helper/TitleBarTheme.md)

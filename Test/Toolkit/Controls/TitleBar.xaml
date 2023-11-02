@@ -47,7 +47,7 @@
                            Grid.Column="1"
                            Width="32"
                            Fill="Transparent"
-                           Visibility="{x:Bind IsPaneToggleButtonVisible, Mode=OneWay}"
+                           Visibility="{x:Bind PaneToggleButton.Visibility, Mode=OneWay}"
                            />
                 <Image x:Name="App_Icon"
                        Grid.Column="2"
@@ -151,7 +151,6 @@
                             Command="{x:Bind PaneToggleButtonCommand}"
                             CommandParameter="{x:Bind PaneToggleButtonCommandParameter}"
                             IsEnabled="{x:Bind IsPaneToggleButtonEnabled, Mode=OneWay}"
-                            Visibility="{x:Bind IsPaneToggleButtonVisible, Mode=OneWay}"
                             >
                         <Button.Transitions>
                             <TransitionCollection>
@@ -172,7 +171,13 @@
             <!--<Grid x:Name="InteractiveSearchGroup" Grid.Column="2">
         <AutoSuggestBox AutomationProperties.Name="Search" QueryIcon="Find" />
     </Grid>-->
-            <ContentPresenter x:Name="InterativePanelLeft" Grid.Column="2" VerticalAlignment="Center" Content="{x:Bind PanelLeft, Mode=OneWay}" />
+            <ContentPresenter x:Name="InterativePanelLeft" Grid.Column="2" VerticalAlignment="Center" Content="{x:Bind PanelLeft, Mode=OneWay}">
+                <ContentPresenter.Transitions>
+                    <TransitionCollection>
+                        <RepositionThemeTransition />
+                    </TransitionCollection>
+                </ContentPresenter.Transitions>
+            </ContentPresenter>
             <ContentPresenter x:Name="InteractiveSearchGroup" Grid.Column="3" VerticalAlignment="Center" Content="{x:Bind Search, Mode=OneWay}">
                 <ContentPresenter.Transitions>
                     <TransitionCollection>

@@ -9,7 +9,6 @@ using Windows.UI.Core;
 
 using UWP.Toolkit.Controls.Helper;
 using UWP.Toolkit.Controls.Enum;
-using System.Diagnostics;
 
 //using Microsoft.UI.Xaml.Controls;
 
@@ -349,27 +348,40 @@ public sealed partial class TitleBar : UserControl
         new PropertyMetadata(null));
     //new PropertyMetadata(null, OnIsPaneToggleButtonVisiblePropertyChanged)
 
+
     /// <summary>
     /// Gets or sets the visibility of the pane toggle button.
     /// </summary>
     /// <returns>
-    /// A value of the enumeration. The default is **Collapsed**.
+    /// A value of the enumeration. The default is **Auto**.
     /// </returns>
-    public Visibility IsPaneToggleButtonVisible
+    public ElementDisplayMode IsPaneToggleButtonVisible
     {
-        get { return (Visibility)GetValue(IsPaneToggleButtonVisibleProperty); }
+        get { return (ElementDisplayMode)GetValue(IsPaneToggleButtonVisibleProperty); }
         set { SetValue(IsPaneToggleButtonVisibleProperty, value); }
     }
 
     /// <summary>
-    /// Identifies the <see cref="IsNavigationButtonVisible"/> dependency property.
+    /// Identifies the <see cref="IsPaneToggleButtonVisible"/> dependency property.
     /// </summary>
     public static readonly DependencyProperty IsPaneToggleButtonVisibleProperty = DependencyProperty.Register(
         nameof(IsPaneToggleButtonVisible),
-        typeof(Visibility),
+        typeof(ElementDisplayMode),
         typeof(TitleBar),
-        new PropertyMetadata(Visibility.Collapsed));
-    //new PropertyMetadata(null, OnIsPaneToggleButtonVisiblePropertyChanged)
+        new PropertyMetadata(ElementDisplayMode.Auto, OnIsPaneToggleButtonVisiblePropertyChanged));
+
+    private static void OnIsPaneToggleButtonVisiblePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    {
+        if (d is TitleBar titleBar)
+        {
+            _ = e.NewValue switch
+            {
+                ElementDisplayMode.Collapse => titleBar.PaneToggleButton.Visibility = Visibility.Collapsed,
+                ElementDisplayMode.Visible or ElementDisplayMode.Auto => titleBar.PaneToggleButton.Visibility = Visibility.Visible,
+                _ => titleBar.PaneToggleButton.Visibility = Visibility.Visible,
+            };
+        }
+    }
 
     /// <summary>
     /// Gets or sets a value indicating whether the user can interact with the pane toggle button.
@@ -420,10 +432,10 @@ public sealed partial class TitleBar : UserControl
 
     #region PanelLeft
     /// <summary>
-    /// Gets or sets a UI element that is shown in the TitleBar pane.
+    /// Gets or sets a UI element that is shown in the TitleBar left panel.
     /// </summary>
     /// <returns>
-    /// The element that is shown in the TitleBar pane.
+    /// The element that is shown in the TitleBar left panel.
     /// </returns>
     public UIElement PanelLeft
     {
@@ -444,10 +456,10 @@ public sealed partial class TitleBar : UserControl
 
     #region PanelRight
     /// <summary>
-    /// Gets or sets a UI element that is shown in the TitleBar pane.
+    /// Gets or sets a UI element that is shown in the TitleBar right panel.
     /// </summary>
     /// <returns>
-    /// The element that is shown in the TitleBar pane.
+    /// The element that is shown in the TitleBar right panel.
     /// </returns>
     public UIElement PanelRight
     {
@@ -487,7 +499,6 @@ public sealed partial class TitleBar : UserControl
         typeof(UIElement),
         typeof(TitleBar),
     new PropertyMetadata(null, OnBodyPropertyChanged));
-    //new PropertyMetadata(null));
 
     private static void OnBodyPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
@@ -500,26 +511,27 @@ public sealed partial class TitleBar : UserControl
                     navigationView.IsPaneOpen = !navigationView.IsPaneOpen;
                 };
 
-                if (navigationView.PaneDisplayMode == Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto)
+                navigationView.IsPaneToggleButtonVisible = false;
+
+                void DisplayModeChangedHandler(object s, Microsoft.UI.Xaml.Controls.NavigationViewDisplayModeChangedEventArgs a)
                 {
-                    navigationView.DisplayModeChanged += (s, a) =>
+
+                    var newMode = a.DisplayMode;
+                    if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded)
                     {
-                        var newMode = a.DisplayMode;
-                        if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded)
-                        {
-                            titleBar.IsPaneToggleButtonVisible = Visibility.Collapsed;
-                        }
-                        else if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact || newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal)
-                        {
-                            titleBar.IsPaneToggleButtonVisible = Windows.UI.Xaml.Visibility.Visible;
-                        }
-                    };
+                        titleBar.PaneToggleButton.Visibility = Visibility.Collapsed;
+                    }
+                    else if (newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact || newMode == Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal)
+                    {
+                        titleBar.PaneToggleButton.Visibility = Visibility.Visible;
+                    }
+                }
+
+                if (navigationView.PaneDisplayMode == Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto && titleBar.IsPaneToggleButtonVisible == ElementDisplayMode.Auto)
+                {
+                    navigationView.DisplayModeChanged += DisplayModeChangedHandler;
                 }
             }
-            //else
-            //{
-            //    titleBar.Body = (UIElement)e.NewValue;
-            //}
         }
     }
     #endregion

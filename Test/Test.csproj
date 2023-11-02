@@ -155,6 +155,7 @@
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
+    <Compile Include="Toolkit\Enum\ElementDisplayMode.cs" />
     <Compile Include="Toolkit\Enum\TitleBarSize.cs" />
     <Compile Include="Toolkit\Enum\ToastAlignment.cs" />
     <Compile Include="Toolkit\Helper\TitleBarTheme.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppLogo.svg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

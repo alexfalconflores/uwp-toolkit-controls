@@ -4,6 +4,9 @@
 
 [Documentation 📖](https://github.com/alexfalconflores/uwp-toolkit-controls)
 
+> [!IMPORTANT]
+> Those who have version `0.0.2` and `upgraded` to version `0.0.3`, please take a look at the documentation, as some `changes` have been made.
+
 ## Library Dependencies 📚
 - PolySharp >= 1.13.2
 - AlexFalconFlores.UWP.Toolkit >= 0.0.7

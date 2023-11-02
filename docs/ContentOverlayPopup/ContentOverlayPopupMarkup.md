@@ -1,9 +1,7 @@
 # ContentOverlayPopupMarkup
 
-> use:
-> ```csharp
+> [!NOTE]
 > using UWP.Toolkit.Controls;
-> ```
 
 ## Methods
 
@@ -48,6 +46,7 @@ Sets the `padding` inside a control. The default value is `horizontal: 0, vertic
 
 ### Background (string background)
 Sets the background color resources name of the control. The default value is `"AcrylicInAppFillColorDefaultBrush"`.
+> [!IMPORTANT]
 > Only support `AcrylicBrush` Resource. 
 
 

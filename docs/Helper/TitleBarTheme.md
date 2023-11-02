@@ -1,8 +1,8 @@
 # Helper
-> use:
-> ```csharp
+
+> [!NOTE]
 > using UWP.Toolkit.Controls.Helper;
-> ```
+
 ## TitleBarTheme
 Sets the `ApplicationViewTitleBar` colors according to the theme provided. `static class`
 

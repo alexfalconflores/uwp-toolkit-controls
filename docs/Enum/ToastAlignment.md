@@ -2,10 +2,8 @@
 ## ToastAlignment
 `Alignment` of the `Toast`.
 
-> use:
-> ```csharp
+> [!NOTE]
 > using UWP.Toolkit.Controls.Enum;
->```
 
 - `Short` = 32
 - `Tall` = 48

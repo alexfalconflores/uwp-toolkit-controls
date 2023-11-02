@@ -2,9 +2,10 @@
 ## ToastItemParameters
 Struct to hold `parameters` for a `ToastItem`.
 
-> use:
-> ```csharp
+> [!NOTE]
 > using UWP.Toolkit.Controls.Struct;
+
+> ```csharp
 >ToastItemParameters toastItemParameters1 = new ToastItemParameters
 >{
 >    Title = "Title 1",

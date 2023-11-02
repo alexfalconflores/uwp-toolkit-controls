@@ -1,10 +1,10 @@
 # Script
 ![Alt text](on-app.png)
 
-> use:
-> ```xaml
+> [!NOTE]
 > xmlns:utControls="using:UWP.Toolkit.Controls"
->
+
+> ```xaml
 > <utControls:Script ButtonToolTip="Copy" Text="Alex.Falcon.Flores" />
 > ```
 

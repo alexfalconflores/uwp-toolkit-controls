@@ -1,10 +1,12 @@
 # Toast
 Represents a `Toast` that can be shown. This class is a `singleton` class.
 ![Alt text](<Screenshot 2023-10-12 025109.png>)
+
+> [!NOTE]
+> using UWP.Toolkit.Controls;
+
 > use:
 > ```csharp
-> using UWP.Toolkit.Controls;
->
 > Toast toast = Toast.Instance;
 > toast.SetTitleBarHeight(TitleBarSize.Tall);
 > toast.SetAlignment(ToastAlignment.TopLeft);

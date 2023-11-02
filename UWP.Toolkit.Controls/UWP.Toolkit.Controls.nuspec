@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>AlexFalconFlores.UWP.Toolkit.Controls</id>
-		<version>0.0.2</version>
+		<version>0.0.3</version>
 		<title>UWP.Toolkit.Controls</title>
 		<authors>Alex Falcon Flores</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,7 +11,7 @@
 		<readme>Docs/readme.md</readme>
 		<projectUrl>https://github.com/alexfalconflores/uwp-toolkit-controls</projectUrl>
 		<description>Add custom controls to your Universal Windows Platform (UWP) applications with ease. Accelerate development and improve user experience. Compatible with WinUI 2.7+.</description>
-		<releaseNotes>Add ContentOverlayPopup, Toast Controls. ToastAlignment enum, TitleBarTheme helper</releaseNotes>
+		<releaseNotes>TitleBar control had an update in PaneCustomPane which is now PanelRight, added PaneToggleButton, PanelLeft properties and more, check the documentation. Enum ElementDisplayMode was added.</releaseNotes>
 		<copyright>Copyright 2023</copyright>
 		<tags>uwp controls markup csharp fluent winui xaml universal windows helper transition enum theme icon</tags>
 		<dependencies>

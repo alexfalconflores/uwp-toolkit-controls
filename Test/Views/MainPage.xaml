@@ -12,6 +12,7 @@
                 Place your content here.
             -->
             <TextBlock Text="Hello World!" />
+            <Button Click="Button_Click" Content="PreviewPopup" />
         </Grid>
     </Grid>
 </Page>
